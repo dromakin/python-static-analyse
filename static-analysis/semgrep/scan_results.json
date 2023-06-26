@@ -1,0 +1,2605 @@
+{
+  "errors": [],
+  "paths": {
+    "_comment": "<add --verbose for a list of skipped paths>",
+    "scanned": [
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/Files/test.txt",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/__init__.py",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/requirements.txt",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/index.html",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/layout.html",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/test.html",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/view.html",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/yaml_test.html",
+      "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/test.db"
+    ]
+  },
+  "results": [
+    {
+      "check_id": "javascript.browser.security.eval-detected.eval-detected",
+      "end": {
+        "col": 445,
+        "line": 24,
+        "offset": 10479
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "d28a053ad7f3602470c82adc833a6e8596c3cfe46c9525ec2ac479ce3849f21f81089d2e366e79dc0fbc79e0fc9f2e1d99cf75dac31ae7b19592ae4e98e6d400_0",
+        "is_ignored": false,
+        "lines": "K.Tl=function(b){return\"(function(){\"+b+\"\\n;})();\\n\"};K.fs=function(b){var c=K.na;try{K.na={Wd:void 0,ld:!1};if(K.za(b))var d=b.call(void 0,{});else if(K.L(b))K.Ml()&&(b=K.Tl(b)),d=K.Ck.call(void 0,b);else throw Error(\"Invalid module definition\");var e=K.na.Wd;if(!K.L(e)||!e)throw Error('Invalid module name \"'+e+'\"');K.na.ld?K.tf(e,d):K.vi&&Object.seal&&typeof d==y&&null!=d&&Object.seal(d);K.Fk[e]=d}finally{K.na=c}};K.Ck=function(b){eval(b);return{}};",
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+            "section": "V5 Validation, Sanitization and Encoding",
+            "version": "4"
+          },
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "GdU7dw",
+              "url": "https://semgrep.dev/playground/r/ExTYWv/javascript.browser.security.eval-detected.eval-detected",
+              "version_id": "ExTYWv"
+            }
+          },
+          "shortlink": "https://sg.run/7ope",
+          "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "browser"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 438,
+        "line": 24,
+        "offset": 10472
+      }
+    },
+    {
+      "check_id": "javascript.browser.security.eval-detected.eval-detected",
+      "end": {
+        "col": 131,
+        "line": 26,
+        "offset": 10984
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "d28a053ad7f3602470c82adc833a6e8596c3cfe46c9525ec2ac479ce3849f21f81089d2e366e79dc0fbc79e0fc9f2e1d99cf75dac31ae7b19592ae4e98e6d400_1",
+        "is_ignored": false,
+        "lines": "K.Rt=function(b,c){var d=K.global.$jscomp;d||(K.global.$jscomp=d={});var e=d.je;if(!e){var f=K.La+K.Bi,g=K.zk(f);if(g){eval(g+a+f);if(K.global.$gwtExport&&K.global.$gwtExport.$jscomp&&!K.global.$gwtExport.$jscomp.transpile)throw Error('The transpiler did not properly export the \"transpile\" method. $gwtExport: '+JSON.stringify(K.global.$gwtExport));K.global.$jscomp.je=K.global.$gwtExport.$jscomp.transpile;d=K.global.$jscomp;e=d.je}}if(!e){var h=\" requires transpilation but no transpiler was found.\";",
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+            "section": "V5 Validation, Sanitization and Encoding",
+            "version": "4"
+          },
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "GdU7dw",
+              "url": "https://semgrep.dev/playground/r/ExTYWv/javascript.browser.security.eval-detected.eval-detected",
+              "version_id": "ExTYWv"
+            }
+          },
+          "shortlink": "https://sg.run/7ope",
+          "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "browser"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 120,
+        "line": 26,
+        "offset": 10973
+      }
+    },
+    {
+      "check_id": "javascript.browser.security.eval-detected.eval-detected",
+      "end": {
+        "col": 98,
+        "line": 41,
+        "offset": 16724
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "d28a053ad7f3602470c82adc833a6e8596c3cfe46c9525ec2ac479ce3849f21f81089d2e366e79dc0fbc79e0fc9f2e1d99cf75dac31ae7b19592ae4e98e6d400_2",
+        "is_ignored": false,
+        "lines": "K.gj=function(){function b(b,c){e?d[b]=!0:c()?d[b]=!1:e=d[b]=!0}function c(b){try{return!!eval(b)}catch(h){return!1}}var d={es3:!1},e=!1,f=K.global.navigator&&K.global.navigator.userAgent?K.global.navigator.userAgent:\"\";b(\"es5\",function(){return c(\"[1,].length==1\")});b(\"es6\",function(){var b=f.match(/Edge\\/(\\d+)(\\.\\d)*/i);return b&&15>Number(b[1])?!1:c('(()=>{\"use strict\";class X{constructor(){if(new.target!=String)throw 1;this.x=42}}let q=Reflect.construct(X,[],String);if(q.x!=42||!(q instanceof String))throw 1;for(const a of[2,3]){if(a==2)continue;function f(z={a}){let a=0;return z.a}{function f(){return 0;}}return f()==3}})()')});",
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+            "section": "V5 Validation, Sanitization and Encoding",
+            "version": "4"
+          },
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "GdU7dw",
+              "url": "https://semgrep.dev/playground/r/ExTYWv/javascript.browser.security.eval-detected.eval-detected",
+              "version_id": "ExTYWv"
+            }
+          },
+          "shortlink": "https://sg.run/7ope",
+          "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "browser"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 91,
+        "line": 41,
+        "offset": 16717
+      }
+    },
+    {
+      "check_id": "python.flask.security.injection.raw-html-concat.raw-html-format",
+      "end": {
+        "col": 22,
+        "line": 112,
+        "offset": 3301
+      },
+      "extra": {
+        "dataflow_trace": {
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 22,
+                  "line": 112,
+                  "offset": 3301
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 16,
+                  "line": 103,
+                  "offset": 3127
+                }
+              },
+              "'''<html>\n    <head>\n    <title>Error</title>\n    </head>\n    <body>\n    <h1>Oops that page doesn't exist!!</h1>\n    <h3>%s</h3>\n    </body>\n    </html>\n    ''' % request.url"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 22,
+                  "line": 112,
+                  "offset": 3301
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 11,
+                  "line": 112,
+                  "offset": 3290
+                }
+              },
+              "request.url"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "6f6864f88e4f885a29d62f6da77f759978dba3044cf14baed52762cc549b7d271b324066038faa49324e2d2603c06758efb7d4c2db2f2aaddc1d62ea24fa313f_0",
+        "is_ignored": false,
+        "lines": "    template = '''<html>\n    <head>\n    <title>Error</title>\n    </head>\n    <body>\n    <h1>Oops that page doesn't exist!!</h1>\n    <h3>%s</h3>\n    </body>\n    </html>\n    ''' % request.url",
+        "message": "Detected user input flowing into a manually constructed HTML string. You may be accidentally bypassing secure methods of rendering HTML by manually constructing HTML and this could create a cross-site scripting vulnerability, which could let attackers steal sensitive user data. To be sure this is safe, check that the HTML is rendered safely. Otherwise, use templates (`flask.render_template`) which will safely render HTML instead.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://flask.palletsprojects.com/en/2.0.x/security/#cross-site-scripting-xss"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "GdUrJv",
+              "url": "https://semgrep.dev/playground/r/bZT4Gb/python.flask.security.injection.raw-html-concat.raw-html-format",
+              "version_id": "bZT4Gb"
+            }
+          },
+          "shortlink": "https://sg.run/Pb7e",
+          "source": "https://semgrep.dev/r/python.flask.security.injection.raw-html-concat.raw-html-format",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "flask"
+          ]
+        },
+        "metavars": {
+          "$ANYTHING": {
+            "abstract_content": "url",
+            "end": {
+              "col": 22,
+              "line": 112,
+              "offset": 3301
+            },
+            "start": {
+              "col": 19,
+              "line": 112,
+              "offset": 3298
+            }
+          },
+          "$HTMLSTR": {
+            "abstract_content": "<html>\n    <head>\n    <title>Error</title>\n    </head>\n    <body>\n    <h1>Oops that page doesn't exist!!</h1>\n    <h3>%s</h3>\n    </body>\n    </html>\n    ",
+            "end": {
+              "col": 5,
+              "line": 112,
+              "offset": 3284
+            },
+            "start": {
+              "col": 19,
+              "line": 103,
+              "offset": 3130
+            }
+          },
+          "$TAG": {
+            "abstract_content": "h3",
+            "end": {
+              "col": 8,
+              "line": 109,
+              "offset": 3247
+            },
+            "start": {
+              "col": 6,
+              "line": 109,
+              "offset": 3245
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 16,
+        "line": 103,
+        "offset": 3127
+      }
+    },
+    {
+      "check_id": "python.django.security.injection.raw-html-format.raw-html-format",
+      "end": {
+        "col": 22,
+        "line": 112,
+        "offset": 3301
+      },
+      "extra": {
+        "dataflow_trace": {
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 22,
+                  "line": 112,
+                  "offset": 3301
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 16,
+                  "line": 103,
+                  "offset": 3127
+                }
+              },
+              "'''<html>\n    <head>\n    <title>Error</title>\n    </head>\n    <body>\n    <h1>Oops that page doesn't exist!!</h1>\n    <h3>%s</h3>\n    </body>\n    </html>\n    ''' % request.url"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 22,
+                  "line": 112,
+                  "offset": 3301
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 11,
+                  "line": 112,
+                  "offset": 3290
+                }
+              },
+              "request.url"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "2dc25af5f62f1b398ce905dfd7f871b9d1c0b1a7d409a0eba6785b6920aaf114987521411862e46a2a02dc3ed2a1a63191c8fd947c438ab83a29d1ccfb44d6ed_0",
+        "is_ignored": false,
+        "lines": "    template = '''<html>\n    <head>\n    <title>Error</title>\n    </head>\n    <body>\n    <h1>Oops that page doesn't exist!!</h1>\n    <h3>%s</h3>\n    </body>\n    </html>\n    ''' % request.url",
+        "message": "Detected user input flowing into a manually constructed HTML string. You may be accidentally bypassing secure methods of rendering HTML by manually constructing HTML and this could create a cross-site scripting vulnerability, which could let attackers steal sensitive user data. To be sure this is safe, check that the HTML is rendered safely. Otherwise, use templates (`django.shortcuts.render`) which will safely render HTML instead.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "HIGH",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://docs.djangoproject.com/en/3.2/topics/http/shortcuts/#render",
+            "https://docs.djangoproject.com/en/3.2/topics/security/#cross-site-scripting-xss-protection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "2ZUPER",
+              "url": "https://semgrep.dev/playground/r/A8Tn65/python.django.security.injection.raw-html-format.raw-html-format",
+              "version_id": "A8Tn65"
+            }
+          },
+          "shortlink": "https://sg.run/oYj1",
+          "source": "https://semgrep.dev/r/python.django.security.injection.raw-html-format.raw-html-format",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "django"
+          ]
+        },
+        "metavars": {
+          "$ANYTHING": {
+            "abstract_content": "url",
+            "end": {
+              "col": 22,
+              "line": 112,
+              "offset": 3301
+            },
+            "start": {
+              "col": 19,
+              "line": 112,
+              "offset": 3298
+            }
+          },
+          "$HTMLSTR": {
+            "abstract_content": "<html>\n    <head>\n    <title>Error</title>\n    </head>\n    <body>\n    <h1>Oops that page doesn't exist!!</h1>\n    <h3>%s</h3>\n    </body>\n    </html>\n    ",
+            "end": {
+              "col": 5,
+              "line": 112,
+              "offset": 3284
+            },
+            "start": {
+              "col": 19,
+              "line": 103,
+              "offset": 3130
+            }
+          },
+          "$TAG": {
+            "abstract_content": "h3",
+            "end": {
+              "col": 8,
+              "line": 109,
+              "offset": 3247
+            },
+            "start": {
+              "col": 6,
+              "line": 109,
+              "offset": 3245
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 16,
+        "line": 103,
+        "offset": 3127
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+      "end": {
+        "col": 249,
+        "line": 3,
+        "offset": 1126
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "8991fbce6d8b39948c1fc41cae65f7c4a82d8749ed500a0b9f16870ad6f92f05aa70d8fa084d13e81eb2878cf1e0bf9ef9e8b7c1e71250e468a6f9fb9b1212b2_0",
+        "is_ignored": false,
+        "lines": "J.Kj=function(b){return\"undefined\"!=typeof window&&window===b?b:\"undefined\"!=typeof global&&null!=global?global:b};J.global=J.Kj(this);J.Vk=function(b){if(b){for(var c=J.global,d=[\"Promise\"],e=0;e<d.length-1;e++){var f=d[e];f in c||(c[f]={});c=c[f]}d=d[d.length-1];e=c[d];b=b(e);b!=e&&null!=b&&J.defineProperty(c,d,{configurable:!0,writable:!0,value:b})}};",
+        "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+          ],
+          "impact": "LOW",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "QrUpbJ",
+              "url": "https://semgrep.dev/playground/r/bZT4d6/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+              "version_id": "bZT4d6"
+            }
+          },
+          "shortlink": "https://sg.run/w1DB",
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "typescript"
+          ]
+        },
+        "metavars": {
+          "$A": {
+            "abstract_content": "f",
+            "end": {
+              "col": 248,
+              "line": 3,
+              "offset": 1125
+            },
+            "propagated_value": {
+              "svalue_abstract_content": "d[e]",
+              "svalue_end": {
+                "col": 224,
+                "line": 3,
+                "offset": 1101
+              },
+              "svalue_start": {
+                "col": 220,
+                "line": 3,
+                "offset": 1097
+              }
+            },
+            "start": {
+              "col": 247,
+              "line": 3,
+              "offset": 1124
+            }
+          },
+          "$SMTH": {
+            "abstract_content": "c",
+            "end": {
+              "col": 244,
+              "line": 3,
+              "offset": 1121
+            },
+            "start": {
+              "col": 243,
+              "line": 3,
+              "offset": 1120
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 243,
+        "line": 3,
+        "offset": 1120
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+      "end": {
+        "col": 449,
+        "line": 106,
+        "offset": 49856
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "34cef0ab29df7df6d23e54eee982ad1baf38b4e170414872211ac62bebf9c1f3130b0aba1340043fbbadec14f9091c8b0cf73a1b20ee3d639b30f61cef37a822_0",
+        "is_ignored": false,
+        "lines": "K.object.Xq=function(b){var c=0,d;for(d in b)c++;return c};K.object.Vq=function(b){for(var c in b)return c};K.object.Wq=function(b){for(var c in b)return b[c]};K.object.contains=function(b,c){return K.object.ej(b,c)};K.object.lr=function(b){var c=[],d=0,e;for(e in b)c[d++]=b[e];return c};K.object.Yf=function(b){var c=[],d=0,e;for(e in b)c[d++]=e;return c};K.object.kr=function(b,c){var d=K.Pb(c),e=d?c:arguments;for(d=d?0:1;d<e.length&&(b=b[e[d]],K.P(b));d++);return b};",
+        "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+          ],
+          "impact": "LOW",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "QrUpbJ",
+              "url": "https://semgrep.dev/playground/r/bZT4d6/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+              "version_id": "bZT4d6"
+            }
+          },
+          "shortlink": "https://sg.run/w1DB",
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "typescript"
+          ]
+        },
+        "metavars": {
+          "$A": {
+            "abstract_content": "e[d]",
+            "end": {
+              "col": 448,
+              "line": 106,
+              "offset": 49855
+            },
+            "start": {
+              "col": 444,
+              "line": 106,
+              "offset": 49851
+            }
+          },
+          "$SMTH": {
+            "abstract_content": "b",
+            "end": {
+              "col": 441,
+              "line": 106,
+              "offset": 49848
+            },
+            "start": {
+              "col": 440,
+              "line": 106,
+              "offset": 49847
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 440,
+        "line": 106,
+        "offset": 49847
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+      "end": {
+        "col": 207,
+        "line": 55,
+        "offset": 23443
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [
+            {
+              "content": "c",
+              "location": {
+                "end": {
+                  "col": 178,
+                  "line": 55,
+                  "offset": 23414
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 177,
+                  "line": 55,
+                  "offset": 23413
+                }
+              }
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 207,
+                  "line": 55,
+                  "offset": 23443
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 182,
+                  "line": 55,
+                  "offset": 23418
+                }
+              },
+              "new RegExp(K.f.Zd(c),\"g\")"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 178,
+                  "line": 55,
+                  "offset": 23414
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 177,
+                  "line": 55,
+                  "offset": 23413
+                }
+              },
+              "c"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "57dd2ab810106196f0f61d2675c94c7e4c676ececd6cebe9f54228bdd831c4cdafef2b7277f6f91c050809250b07ad67a854fa63a3c03f06b2b2a4dd888011d6_0",
+        "is_ignored": false,
+        "lines": "K.f.Cb=function(b,c,d){var e=b;0<=c&&c<b.length&&0<d&&(e=b.substr(0,c)+b.substr(c+d,b.length-c-d));return e};K.f.remove=function(b,c){return b.replace(c,\"\")};K.f.Ls=function(b,c){c=new RegExp(K.f.Zd(c),\"g\");return b.replace(c,\"\")};K.f.Rs=function(b,c,d){c=new RegExp(K.f.Zd(c),\"g\");return b.replace(c,d.replace(/\\$/g,\"$$$$\"))};K.f.Zd=function(b){return String(b).replace(/([-()\\[\\]{}+?*.$\\^|,:#<!\\\\])/g,\"\\\\$1\").replace(/\\x08/g,\"\\\\x08\")};",
+        "message": "RegExp() called with a `c` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "zdU1gD",
+              "url": "https://semgrep.dev/playground/r/K3TkwJ/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+              "version_id": "K3TkwJ"
+            }
+          },
+          "shortlink": "https://sg.run/gr65",
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+          "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "javascript"
+          ]
+        },
+        "metavars": {
+          "$ARG": {
+            "abstract_content": "c",
+            "end": {
+              "col": 178,
+              "line": 55,
+              "offset": 23414
+            },
+            "start": {
+              "col": 177,
+              "line": 55,
+              "offset": 23413
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 182,
+        "line": 55,
+        "offset": 23418
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+      "end": {
+        "col": 282,
+        "line": 55,
+        "offset": 23518
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [
+            {
+              "content": "c",
+              "location": {
+                "end": {
+                  "col": 251,
+                  "line": 55,
+                  "offset": 23487
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 250,
+                  "line": 55,
+                  "offset": 23486
+                }
+              }
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 282,
+                  "line": 55,
+                  "offset": 23518
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 257,
+                  "line": 55,
+                  "offset": 23493
+                }
+              },
+              "new RegExp(K.f.Zd(c),\"g\")"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 251,
+                  "line": 55,
+                  "offset": 23487
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 250,
+                  "line": 55,
+                  "offset": 23486
+                }
+              },
+              "c"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "57dd2ab810106196f0f61d2675c94c7e4c676ececd6cebe9f54228bdd831c4cdafef2b7277f6f91c050809250b07ad67a854fa63a3c03f06b2b2a4dd888011d6_1",
+        "is_ignored": false,
+        "lines": "K.f.Cb=function(b,c,d){var e=b;0<=c&&c<b.length&&0<d&&(e=b.substr(0,c)+b.substr(c+d,b.length-c-d));return e};K.f.remove=function(b,c){return b.replace(c,\"\")};K.f.Ls=function(b,c){c=new RegExp(K.f.Zd(c),\"g\");return b.replace(c,\"\")};K.f.Rs=function(b,c,d){c=new RegExp(K.f.Zd(c),\"g\");return b.replace(c,d.replace(/\\$/g,\"$$$$\"))};K.f.Zd=function(b){return String(b).replace(/([-()\\[\\]{}+?*.$\\^|,:#<!\\\\])/g,\"\\\\$1\").replace(/\\x08/g,\"\\\\x08\")};",
+        "message": "RegExp() called with a `c` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "zdU1gD",
+              "url": "https://semgrep.dev/playground/r/K3TkwJ/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+              "version_id": "K3TkwJ"
+            }
+          },
+          "shortlink": "https://sg.run/gr65",
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+          "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "javascript"
+          ]
+        },
+        "metavars": {
+          "$ARG": {
+            "abstract_content": "c",
+            "end": {
+              "col": 251,
+              "line": 55,
+              "offset": 23487
+            },
+            "start": {
+              "col": 250,
+              "line": 55,
+              "offset": 23486
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 257,
+        "line": 55,
+        "offset": 23493
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+      "end": {
+        "col": 191,
+        "line": 59,
+        "offset": 25331
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [
+            {
+              "content": "c",
+              "location": {
+                "end": {
+                  "col": 97,
+                  "line": 59,
+                  "offset": 25237
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 96,
+                  "line": 59,
+                  "offset": 25236
+                }
+              }
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 191,
+                  "line": 59,
+                  "offset": 25331
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 141,
+                  "line": 59,
+                  "offset": 25281
+                }
+              },
+              "new RegExp(\"(^\"+(c?\"|[\"+c+\"]+\":\"\")+\")([a-z])\",\"g\")"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 97,
+                  "line": 59,
+                  "offset": 25237
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+                "start": {
+                  "col": 96,
+                  "line": 59,
+                  "offset": 25236
+                }
+              },
+              "c"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "57dd2ab810106196f0f61d2675c94c7e4c676ececd6cebe9f54228bdd831c4cdafef2b7277f6f91c050809250b07ad67a854fa63a3c03f06b2b2a4dd888011d6_2",
+        "is_ignored": false,
+        "lines": "K.f.Pt=function(b){return String(b).replace(/([A-Z])/g,\"-$1\").toLowerCase()};K.f.Qt=function(b,c){c=K.L(c)?K.f.Zd(c):\"\\\\s\";return b.replace(new RegExp(\"(^\"+(c?\"|[\"+c+\"]+\":\"\")+\")([a-z])\",\"g\"),function(b,c,f){return c+f.toUpperCase()})};K.f.Tp=function(b){return String(b.charAt(0)).toUpperCase()+String(b.substr(1)).toLowerCase()};K.f.parseInt=function(b){isFinite(b)&&(b=String(b));return K.L(b)?/^\\s*-?0x/i.test(b)?parseInt(b,16):parseInt(b,10):NaN};",
+        "message": "RegExp() called with a `c` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "zdU1gD",
+              "url": "https://semgrep.dev/playground/r/K3TkwJ/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+              "version_id": "K3TkwJ"
+            }
+          },
+          "shortlink": "https://sg.run/gr65",
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+          "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "javascript"
+          ]
+        },
+        "metavars": {
+          "$ARG": {
+            "abstract_content": "c",
+            "end": {
+              "col": 97,
+              "line": 59,
+              "offset": 25237
+            },
+            "start": {
+              "col": 96,
+              "line": 59,
+              "offset": 25236
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 141,
+        "line": 59,
+        "offset": 25281
+      }
+    },
+    {
+      "check_id": "python.django.security.audit.xss.template-href-var.template-href-var",
+      "end": {
+        "col": 41,
+        "line": 12,
+        "offset": 320
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "d60b825eff115c49229e8175abe00a91f4337b69a0e8530b6add08b525c7fb5f41a845e2c0e36e8871192c5f1abeaf237477bff28f60430b88d5c32967203a35_0",
+        "is_ignored": false,
+        "lines": "            <li><a href = \"{{ url[0] }}\">{{ url[0] }}</a> - {{ url[1] }} - Allowed Methods: {{ url[2] }}</li>",
+        "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. Use the 'url' template tag to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://flask.palletsprojects.com/en/1.1.x/security/#cross-site-scripting-xss",
+            "https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#url",
+            "https://content-security-policy.com/"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "DbUpDg",
+              "url": "https://semgrep.dev/playground/r/w8T0Zb/python.django.security.audit.xss.template-href-var.template-href-var",
+              "version_id": "w8T0Zb"
+            }
+          },
+          "shortlink": "https://sg.run/4x25",
+          "source": "https://semgrep.dev/r/python.django.security.audit.xss.template-href-var.template-href-var",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "django"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/index.html",
+      "start": {
+        "col": 20,
+        "line": 12,
+        "offset": 299
+      }
+    },
+    {
+      "check_id": "python.flask.security.xss.audit.template-href-var.template-href-var",
+      "end": {
+        "col": 41,
+        "line": 12,
+        "offset": 320
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "db6d4bafdb5729f8379002a0db3246bd49a4d0900bd49cbb76b0b66371d36156852c58e14b4750d55c2a3284945e5b966a211c194a4d168fad311324da1a92de_0",
+        "is_ignored": false,
+        "lines": "            <li><a href = \"{{ url[0] }}\">{{ url[0] }}</a> - {{ url[1] }} - Allowed Methods: {{ url[2] }}</li>",
+        "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. Use 'url_for()' to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://flask.palletsprojects.com/en/1.1.x/security/#cross-site-scripting-xss",
+            "https://content-security-policy.com/"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "6JUjej",
+              "url": "https://semgrep.dev/playground/r/gET5qr/python.flask.security.xss.audit.template-href-var.template-href-var",
+              "version_id": "gET5qr"
+            }
+          },
+          "shortlink": "https://sg.run/Do7o",
+          "source": "https://semgrep.dev/r/python.flask.security.xss.audit.template-href-var.template-href-var",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "flask"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/index.html",
+      "start": {
+        "col": 20,
+        "line": 12,
+        "offset": 299
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.formatted-sql-query.formatted-sql-query",
+      "end": {
+        "col": 64,
+        "line": 265,
+        "offset": 9719
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "cea1bdd9cfe70e2492e428ce3f4ea2f259f2aabc36e537e5a64c6591985922bec49df81997b4448f8833e22bc1229344a860876500aa9bd11435c2127dc13a6f_0",
+        "is_ignored": false,
+        "lines": "                    search_query = db.engine.execute(str_query)",
+        "message": "Detected possible formatted SQL query. Use parameterized queries instead.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "HIGH",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://stackoverflow.com/questions/775296/mysql-parameterized-queries"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "3qUP9k",
+              "url": "https://semgrep.dev/playground/r/vdT3k4/python.lang.security.audit.formatted-sql-query.formatted-sql-query",
+              "version_id": "vdT3k4"
+            }
+          },
+          "shortlink": "https://sg.run/EkWw",
+          "source": "https://semgrep.dev/r/python.lang.security.audit.formatted-sql-query.formatted-sql-query",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "python"
+          ]
+        },
+        "metavars": {
+          "$DB": {
+            "abstract_content": "db.engine",
+            "end": {
+              "col": 45,
+              "line": 265,
+              "offset": 9700
+            },
+            "start": {
+              "col": 36,
+              "line": 265,
+              "offset": 9691
+            }
+          },
+          "$SQL": {
+            "abstract_content": "str_query",
+            "end": {
+              "col": 63,
+              "line": 265,
+              "offset": 9718
+            },
+            "propagated_value": {
+              "svalue_abstract_content": "\"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\"%search_term",
+              "svalue_end": {
+                "col": 124,
+                "line": 261,
+                "offset": 9461
+              },
+              "svalue_start": {
+                "col": 33,
+                "line": 261,
+                "offset": 9370
+              }
+            },
+            "start": {
+              "col": 54,
+              "line": 265,
+              "offset": 9709
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 36,
+        "line": 265,
+        "offset": 9691
+      }
+    },
+    {
+      "check_id": "python.jwt.security.jwt-hardcode.jwt-python-hardcoded-secret",
+      "end": {
+        "col": 193,
+        "line": 184,
+        "offset": 6227
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "1b046b80f21186802c864a43c8c187b83d6ad28f0955ab28457029fac480d874f2e63356e1f0a59e316fee8d0665e6cfd48679c03b12a087b4a3b1441b8a74c4_0",
+        "is_ignored": false,
+        "lines": "            auth_token = jwt.encode({'user': username, 'exp': get_exp_date(), 'nbf': datetime.datetime.utcnow(), 'iss': 'we45', 'iat': datetime.datetime.utcnow()}, app.config['SECRET_KEY_HMAC'], algorithm='HS256')",
+        "message": "Hardcoded JWT secret or private key is used. This is a Insufficiently Protected Credentials weakness: https://cwe.mitre.org/data/definitions/522.html Consider using an appropriate security mechanism to protect the credentials (e.g. keeping secrets in environment variables)",
+        "metadata": {
+          "category": "security",
+          "confidence": "HIGH",
+          "cwe": [
+            "CWE-522: Insufficiently Protected Credentials"
+          ],
+          "cwe2021-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "HIGH",
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A04:2021 - Insecure Design"
+          ],
+          "references": [
+            "https://r2c.dev/blog/2020/hardcoded-secrets-unverified-tokens-and-other-common-jwt-mistakes/"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "X5U8P5",
+              "url": "https://semgrep.dev/playground/r/GxTW2b/python.jwt.security.jwt-hardcode.jwt-python-hardcoded-secret",
+              "version_id": "GxTW2b"
+            }
+          },
+          "shortlink": "https://sg.run/l2E9",
+          "source": "https://semgrep.dev/r/python.jwt.security.jwt-hardcode.jwt-python-hardcoded-secret",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "jwt"
+          ]
+        },
+        "metavars": {
+          "$SECRET": {
+            "abstract_content": "app.config['SECRET_KEY_HMAC']",
+            "end": {
+              "col": 194,
+              "line": 184,
+              "offset": 6228
+            },
+            "start": {
+              "col": 165,
+              "line": 184,
+              "offset": 6199
+            }
+          },
+          "$X": {
+            "abstract_content": "{'user'username'exp'get_exp_date()'nbf'datetime.datetime.utcnow()'iss''we45''iat'datetime.datetime.utcnow()}",
+            "end": {
+              "col": 163,
+              "line": 184,
+              "offset": 6197
+            },
+            "start": {
+              "col": 37,
+              "line": 184,
+              "offset": 6071
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 176,
+        "line": 184,
+        "offset": 6210
+      }
+    },
+    {
+      "check_id": "python.jwt.security.unverified-jwt-decode.unverified-jwt-decode",
+      "end": {
+        "col": 48,
+        "line": 97,
+        "offset": 3040
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "ef5fc6be4f24e92828a1e94db4608f5f378bc3831f65170b1e49db2137a1afd43ce813abc6414e3d6661e575d75c412199e42a65d812e4921fb7ccecb783d3a2_0",
+        "fix_regex": {
+          "regex": "(verify\\s*=\\s*)False",
+          "replacement": "\\1True"
+        },
+        "is_ignored": false,
+        "lines": "    decoded = jwt.decode(token, verify = False)",
+        "message": "Detected JWT token decoded with 'verify=False'. This bypasses any integrity checks for the token which means the token could be tampered with by malicious actors. Ensure that the JWT token is verified.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-287: Improper Authentication"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A02:2017 - Broken Authentication",
+            "A07:2021 - Identification and Authentication Failures"
+          ],
+          "references": [
+            "https://github.com/we45/Vulnerable-Flask-App/blob/752ee16087c0bfb79073f68802d907569a1f0df7/app/app.py#L96"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "10UKjo",
+              "url": "https://semgrep.dev/playground/r/A8TnR1/python.jwt.security.unverified-jwt-decode.unverified-jwt-decode",
+              "version_id": "A8TnR1"
+            }
+          },
+          "shortlink": "https://sg.run/6nyB",
+          "source": "https://semgrep.dev/r/python.jwt.security.unverified-jwt-decode.unverified-jwt-decode",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "jwt"
+          ]
+        },
+        "metavars": {},
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 15,
+        "line": 97,
+        "offset": 3007
+      }
+    },
+    {
+      "check_id": "python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-md5",
+      "end": {
+        "col": 46,
+        "line": 141,
+        "offset": 4329
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "5c554b3c2f416bed0151be76a7fead966afea40be1e738b04d61933848af6be1d30e57e79c60f899d11a6012d4888fbd8e87f52a41b258f7a1e30cc93a2abea1_0",
+        "fix_regex": {
+          "regex": "md5",
+          "replacement": "sha256"
+        },
+        "is_ignored": false,
+        "lines": "            hash_pass = hashlib.md5(password).hexdigest()",
+        "message": "Detected MD5 hash algorithm which is considered insecure. MD5 is not collision resistant and is therefore not suitable as a cryptographic signature. Use SHA256 or SHA3 instead.",
+        "metadata": {
+          "asvs": {
+            "control_id": "6.2.2 Insecure Custom Algorithm",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x14-V6-Cryptography.md#v62-algorithms",
+            "section": "V6 Stored Cryptography Verification Requirements",
+            "version": "4"
+          },
+          "bandit-code": "B303",
+          "category": "security",
+          "cwe": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "owasp": "A3: Sensitive Data Exposure",
+          "references": [
+            "https://tools.ietf.org/html/rfc6151",
+            "https://crypto.stackexchange.com/questions/44151/how-does-the-flame-malware-take-advantage-of-md5-collision",
+            "https://pycryptodome.readthedocs.io/en/latest/src/hash/sha3_256.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "wdUJ2Y",
+              "url": "https://semgrep.dev/playground/r/nWTPy6/python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-md5",
+              "version_id": "nWTPy6"
+            }
+          },
+          "shortlink": "https://sg.run/9odY",
+          "source": "https://semgrep.dev/r/python.lang.security.insecure-hash-algorithms.insecure-hash-algorithm-md5",
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/d5f8fa0d89d7b11442fc6ec80ca42953974354c8/bandit/blacklists/calls.py#L59",
+          "technology": [
+            "python"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 25,
+        "line": 141,
+        "offset": 4308
+      }
+    },
+    {
+      "check_id": "python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+      "end": {
+        "col": 64,
+        "line": 265,
+        "offset": 9719
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "cdbaa0e12fca996327a314a88dda70f75561dabee06f0d05bfd4ea4e221052010f6955b0245a525bfeebb3c88d784fe836eeaad6376db300c3dc23a9a4142a54_0",
+        "is_ignored": false,
+        "lines": "                    search_query = db.engine.execute(str_query)",
+        "message": "Avoiding SQL string concatenation: untrusted input concatenated with raw SQL query can result in SQL Injection. In order to execute raw query safely, prepared statement should be used. SQLAlchemy provides TextualSQL to easily used prepared statement with named parameters. For complex SQL composition, use SQL Expression Language or Schema Definition Language. In most cases, SQLAlchemy ORM will be a better option.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "HIGH",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql",
+            "https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm",
+            "https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "oqUz5y",
+              "url": "https://semgrep.dev/playground/r/YDTd6W/python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+              "version_id": "YDTd6W"
+            }
+          },
+          "shortlink": "https://sg.run/2b1L",
+          "source": "https://semgrep.dev/r/python.sqlalchemy.security.sqlalchemy-execute-raw-query.sqlalchemy-execute-raw-query",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "sqlalchemy"
+          ]
+        },
+        "metavars": {
+          "$CONNECTION": {
+            "abstract_content": "db.engine",
+            "end": {
+              "col": 45,
+              "line": 265,
+              "offset": 9700
+            },
+            "start": {
+              "col": 36,
+              "line": 265,
+              "offset": 9691
+            }
+          },
+          "$QUERY": {
+            "abstract_content": "str_query",
+            "end": {
+              "col": 63,
+              "line": 265,
+              "offset": 9718
+            },
+            "propagated_value": {
+              "svalue_abstract_content": "\"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\"%search_term",
+              "svalue_end": {
+                "col": 124,
+                "line": 261,
+                "offset": 9461
+              },
+              "svalue_start": {
+                "col": 33,
+                "line": 261,
+                "offset": 9370
+              }
+            },
+            "start": {
+              "col": 54,
+              "line": 265,
+              "offset": 9709
+            }
+          },
+          "$SQL": {
+            "abstract_content": "\"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\"",
+            "end": {
+              "col": 110,
+              "line": 261,
+              "offset": 9447
+            },
+            "start": {
+              "col": 33,
+              "line": 261,
+              "offset": 9370
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 36,
+        "line": 265,
+        "offset": 9691
+      }
+    },
+    {
+      "check_id": "python.flask.security.insecure-deserialization.insecure-deserialization",
+      "end": {
+        "col": 29,
+        "line": 329,
+        "offset": 11793
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "a33a599f5a39da97723d4fbac3edd66c7fdd69e99129867ebb53b98f5515d2c66b7ed4e2084ad75b7ff1d9ac1805c22f7f96fca45b0c2e0f461470b4cce296f6_0",
+        "is_ignored": false,
+        "lines": "        ydata = yaml.load(y)",
+        "message": "Detected the use of an insecure deserialization library in a Flask route. These libraries are prone to code execution vulnerabilities. Ensure user data does not enter this function. To fix this, try to avoid serializing whole objects. Consider instead using a serializer such as JSON.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.python.org/3/library/pickle.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "d8UjBO",
+              "url": "https://semgrep.dev/playground/r/vdT324/python.flask.security.insecure-deserialization.insecure-deserialization",
+              "version_id": "vdT324"
+            }
+          },
+          "shortlink": "https://sg.run/N45z",
+          "source": "https://semgrep.dev/r/python.flask.security.insecure-deserialization.insecure-deserialization",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "flask"
+          ]
+        },
+        "metavars": {
+          "$X": {
+            "abstract_content": "yaml_hammer",
+            "end": {
+              "col": 16,
+              "line": 316,
+              "offset": 11366
+            },
+            "start": {
+              "col": 5,
+              "line": 316,
+              "offset": 11355
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 17,
+        "line": 329,
+        "offset": 11781
+      }
+    },
+    {
+      "check_id": "python.django.security.injection.tainted-sql-string.tainted-sql-string",
+      "end": {
+        "col": 124,
+        "line": 261,
+        "offset": 9461
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [
+            {
+              "content": "content",
+              "location": {
+                "end": {
+                  "col": 20,
+                  "line": 255,
+                  "offset": 9161
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 13,
+                  "line": 255,
+                  "offset": 9154
+                }
+              }
+            },
+            {
+              "content": "search_term",
+              "location": {
+                "end": {
+                  "col": 32,
+                  "line": 259,
+                  "offset": 9278
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 21,
+                  "line": 259,
+                  "offset": 9267
+                }
+              }
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 124,
+                  "line": 261,
+                  "offset": 9461
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 33,
+                  "line": 261,
+                  "offset": 9370
+                }
+              },
+              "\"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\" % search_term"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 35,
+                  "line": 255,
+                  "offset": 9176
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 23,
+                  "line": 255,
+                  "offset": 9164
+                }
+              },
+              "request.json"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "aeda2cf86fb38cc5d5c9df5d275b95ff30853d2dd6b49146e5b612399c79aec3077018ec95189680e959437fa433ee6869b3217a2d195f00f363066d8c0742b4_0",
+        "is_ignored": false,
+        "lines": "                    str_query = \"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\" % search_term",
+        "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using the Django object-relational mappers (ORM) instead of raw SQL queries.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+          ],
+          "impact": "LOW",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.djangoproject.com/en/3.0/topics/security/#sql-injection-protection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "lBU8Ad",
+              "url": "https://semgrep.dev/playground/r/GxTWGb/python.django.security.injection.tainted-sql-string.tainted-sql-string",
+              "version_id": "GxTWGb"
+            }
+          },
+          "shortlink": "https://sg.run/PbZp",
+          "source": "https://semgrep.dev/r/python.django.security.injection.tainted-sql-string.tainted-sql-string",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "django"
+          ]
+        },
+        "metavars": {
+          "$ANYTHING": {
+            "abstract_content": "json",
+            "end": {
+              "col": 35,
+              "line": 255,
+              "offset": 9176
+            },
+            "start": {
+              "col": 31,
+              "line": 255,
+              "offset": 9172
+            }
+          },
+          "$SQLSTR": {
+            "abstract_content": "SELECT first_name, last_name, username FROM customer WHERE username = '%s';",
+            "end": {
+              "col": 109,
+              "line": 261,
+              "offset": 9446
+            },
+            "start": {
+              "col": 34,
+              "line": 261,
+              "offset": 9371
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 33,
+        "line": 261,
+        "offset": 9370
+      }
+    },
+    {
+      "check_id": "python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+      "end": {
+        "col": 124,
+        "line": 261,
+        "offset": 9461
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [
+            {
+              "content": "content",
+              "location": {
+                "end": {
+                  "col": 20,
+                  "line": 255,
+                  "offset": 9161
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 13,
+                  "line": 255,
+                  "offset": 9154
+                }
+              }
+            },
+            {
+              "content": "search_term",
+              "location": {
+                "end": {
+                  "col": 32,
+                  "line": 259,
+                  "offset": 9278
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 21,
+                  "line": 259,
+                  "offset": 9267
+                }
+              }
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 124,
+                  "line": 261,
+                  "offset": 9461
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 33,
+                  "line": 261,
+                  "offset": 9370
+                }
+              },
+              "\"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\" % search_term"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 35,
+                  "line": 255,
+                  "offset": 9176
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 23,
+                  "line": 255,
+                  "offset": 9164
+                }
+              },
+              "request.json"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "f50ad777f00a42dc40ffdb739bd1119287c4c98e7a167125e174c5d68f032e2da80750ce9ba1f0b4aad821210e0bb9db04faa7a004c3dbf1a2a812b5be12b447_0",
+        "is_ignored": false,
+        "lines": "                    str_query = \"SELECT first_name, last_name, username FROM customer WHERE username = '%s';\" % search_term",
+        "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as SQLAlchemy which will protect your queries.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-704: Incorrect Type Conversion or Cast"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-textual-sql",
+            "https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_quick_guide.htm",
+            "https://docs.sqlalchemy.org/en/14/core/tutorial.html#using-more-specific-text-with-table-expression-literal-column-and-expression-column"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "YGUDKQ",
+              "url": "https://semgrep.dev/playground/r/w8T03J/python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+              "version_id": "w8T03J"
+            }
+          },
+          "shortlink": "https://sg.run/JxZj",
+          "source": "https://semgrep.dev/r/python.flask.security.injection.tainted-sql-string.tainted-sql-string",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "sqlalchemy",
+            "flask"
+          ]
+        },
+        "metavars": {
+          "$ANYTHING": {
+            "abstract_content": "json",
+            "end": {
+              "col": 35,
+              "line": 255,
+              "offset": 9176
+            },
+            "start": {
+              "col": 31,
+              "line": 255,
+              "offset": 9172
+            }
+          },
+          "$SQLSTR": {
+            "abstract_content": "SELECT first_name, last_name, username FROM customer WHERE username = '%s';",
+            "end": {
+              "col": 109,
+              "line": 261,
+              "offset": 9446
+            },
+            "start": {
+              "col": 34,
+              "line": 261,
+              "offset": 9371
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 33,
+        "line": 261,
+        "offset": 9370
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.md5-used-as-password.md5-used-as-password",
+      "end": {
+        "col": 58,
+        "line": 141,
+        "offset": 4341
+      },
+      "extra": {
+        "dataflow_trace": {
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 58,
+                  "line": 141,
+                  "offset": 4341
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 25,
+                  "line": 141,
+                  "offset": 4308
+                }
+              },
+              "hashlib.md5(password).hexdigest()"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 36,
+                  "line": 141,
+                  "offset": 4319
+                },
+                "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+                "start": {
+                  "col": 25,
+                  "line": 141,
+                  "offset": 4308
+                }
+              },
+              "hashlib.md5"
+            ]
+          ]
+        },
+        "engine_kind": "OSS",
+        "fingerprint": "5c07050c3ae760fdcd7b8eab381faf241d31f50820da706b4a5e7b07ef0649a25e8107b88d8b64e1969bdcbaa3f621e88d75c5e42aabf0134d77fb95a4da5cb5_0",
+        "is_ignored": false,
+        "lines": "            hash_pass = hashlib.md5(password).hexdigest()",
+        "message": "It looks like MD5 is used as a password hash. MD5 is not considered a secure password hash because it can be cracked by an attacker in a short amount of time. Use a suitable password hashing function such as scrypt. You can use `hashlib.scrypt`.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "impact": "LOW",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "HIGH",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://tools.ietf.org/html/rfc6151",
+            "https://crypto.stackexchange.com/questions/44151/how-does-the-flame-malware-take-advantage-of-md5-collision",
+            "https://pycryptodome.readthedocs.io/en/latest/src/hash/sha3_256.html",
+            "https://security.stackexchange.com/questions/211/how-to-securely-hash-passwords",
+            "https://github.com/returntocorp/semgrep-rules/issues/1609",
+            "https://docs.python.org/3/library/hashlib.html#hashlib.scrypt"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "6JU1w1",
+              "url": "https://semgrep.dev/playground/r/JdTZgr/python.lang.security.audit.md5-used-as-password.md5-used-as-password",
+              "version_id": "JdTZgr"
+            }
+          },
+          "shortlink": "https://sg.run/5DwD",
+          "source": "https://semgrep.dev/r/python.lang.security.audit.md5-used-as-password.md5-used-as-password",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "pycryptodome",
+            "hashlib",
+            "md5"
+          ]
+        },
+        "metavars": {
+          "$FUNCTION": {
+            "abstract_content": "hashlib.md5(password).hexdigest",
+            "end": {
+              "col": 56,
+              "line": 141,
+              "offset": 4339
+            },
+            "start": {
+              "col": 25,
+              "line": 141,
+              "offset": 4308
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 25,
+        "line": 141,
+        "offset": 4308
+      }
+    },
+    {
+      "check_id": "python.flask.security.audit.render-template-string.render-template-string",
+      "end": {
+        "col": 85,
+        "line": 114,
+        "offset": 3387
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "27d07a56600d0f708a496477c5741bc7ec64db36ac7c4b88a1ce9b900aa78f196c1137d11301980a9cfda2f397d197efabfcce694d7a4e53d5f0284280d77c75_0",
+        "is_ignored": false,
+        "lines": "    return render_template_string(template, dir = dir, help = help, locals = locals),404",
+        "message": "Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "5rUOv1",
+              "url": "https://semgrep.dev/playground/r/o5T571/python.flask.security.audit.render-template-string.render-template-string",
+              "version_id": "o5T571"
+            }
+          },
+          "shortlink": "https://sg.run/8yjE",
+          "source": "https://semgrep.dev/r/python.flask.security.audit.render-template-string.render-template-string",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "flask"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 12,
+        "line": 114,
+        "offset": 3314
+      }
+    },
+    {
+      "check_id": "python.flask.security.audit.render-template-string.render-template-string",
+      "end": {
+        "col": 95,
+        "line": 281,
+        "offset": 10407
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "27d07a56600d0f708a496477c5741bc7ec64db36ac7c4b88a1ce9b900aa78f196c1137d11301980a9cfda2f397d197efabfcce694d7a4e53d5f0284280d77c75_1",
+        "is_ignored": false,
+        "lines": "                    return render_template_string(template, dir=dir, help=help, locals=locals), 404",
+        "message": "Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "5rUOv1",
+              "url": "https://semgrep.dev/playground/r/o5T571/python.flask.security.audit.render-template-string.render-template-string",
+              "version_id": "o5T571"
+            }
+          },
+          "shortlink": "https://sg.run/8yjE",
+          "source": "https://semgrep.dev/r/python.flask.security.audit.render-template-string.render-template-string",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "flask"
+          ]
+        },
+        "metavars": {},
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 28,
+        "line": 281,
+        "offset": 10340
+      }
+    },
+    {
+      "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "end": {
+        "col": 748,
+        "line": 153,
+        "offset": 75184
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "fce9d782a2c26839913bec54ffbcce7a30b0e45d6fc85191fd2e8b94939ba054e38543eebef7ea599b52ac807379c36f325ae42581f44a838e6e81fd252c6712_0",
+        "is_ignored": false,
+        "lines": "K.b.l.kc=function(b,c,d){var e={},f;for(f in b)e[f]=b[f];for(f in c)e[f]=c[f];for(f in d){var g=f.toLowerCase();if(g in b)throw Error('Cannot override \"'+g+'\" attribute, got \"'+f+'\" with value \"'+d[f]+'\"');g in c&&delete e[g];e[f]=d[f]}return e};K.b.l.Tm=K.b.l.pa(\"<!DOCTYPE html>\",K.h.i.O.sa);K.b.l.EMPTY=K.b.l.pa(\"\",K.h.i.O.sa);K.b.l.ze=K.b.l.pa(\"<br>\",K.h.i.O.sa);K.a.S={};K.a.S.Ln={bm:\"afterbegin\",cm:\"afterend\",rm:\"beforebegin\",sm:\"beforeend\"};K.a.S.ur=function(b,c,d){b.insertAdjacentHTML(c,K.b.l.u(d))};K.a.S.wi={MATH:!0,SCRIPT:!0,STYLE:!0,SVG:!0,TEMPLATE:!0};K.a.S.oh=function(b,c){if(K.m.oa&&K.a.S.wi[b.tagName.toUpperCase()])throw Error(\"goog.dom.safe.setInnerHtml cannot be used to set content of \"+b.tagName+\".\");b.innerHTML=K.b.l.u(c)};K.a.S.tt=function(b,c){b.outerHTML=K.b.l.u(c)};K.a.S.wt=function(b,c){b.style.cssText=K.b.F.u(c)};K.a.S.yq=function(b,c){b.write(K.b.l.u(c))};",
+        "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "LOW",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "ReUg41",
+              "url": "https://semgrep.dev/playground/r/7ZTYRP/javascript.browser.security.insecure-document-method.insecure-document-method",
+              "version_id": "7ZTYRP"
+            }
+          },
+          "shortlink": "https://sg.run/LwA9",
+          "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "browser"
+          ]
+        },
+        "metavars": {
+          "$EL": {
+            "abstract_content": "b",
+            "end": {
+              "col": 727,
+              "line": 153,
+              "offset": 75163
+            },
+            "start": {
+              "col": 726,
+              "line": 153,
+              "offset": 75162
+            }
+          },
+          "$HTML": {
+            "abstract_content": "K.b.l.u(c)",
+            "end": {
+              "col": 748,
+              "line": 153,
+              "offset": 75184
+            },
+            "start": {
+              "col": 738,
+              "line": 153,
+              "offset": 75174
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 726,
+        "line": 153,
+        "offset": 75162
+      }
+    },
+    {
+      "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+      "end": {
+        "col": 795,
+        "line": 153,
+        "offset": 75231
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "fce9d782a2c26839913bec54ffbcce7a30b0e45d6fc85191fd2e8b94939ba054e38543eebef7ea599b52ac807379c36f325ae42581f44a838e6e81fd252c6712_1",
+        "is_ignored": false,
+        "lines": "K.b.l.kc=function(b,c,d){var e={},f;for(f in b)e[f]=b[f];for(f in c)e[f]=c[f];for(f in d){var g=f.toLowerCase();if(g in b)throw Error('Cannot override \"'+g+'\" attribute, got \"'+f+'\" with value \"'+d[f]+'\"');g in c&&delete e[g];e[f]=d[f]}return e};K.b.l.Tm=K.b.l.pa(\"<!DOCTYPE html>\",K.h.i.O.sa);K.b.l.EMPTY=K.b.l.pa(\"\",K.h.i.O.sa);K.b.l.ze=K.b.l.pa(\"<br>\",K.h.i.O.sa);K.a.S={};K.a.S.Ln={bm:\"afterbegin\",cm:\"afterend\",rm:\"beforebegin\",sm:\"beforeend\"};K.a.S.ur=function(b,c,d){b.insertAdjacentHTML(c,K.b.l.u(d))};K.a.S.wi={MATH:!0,SCRIPT:!0,STYLE:!0,SVG:!0,TEMPLATE:!0};K.a.S.oh=function(b,c){if(K.m.oa&&K.a.S.wi[b.tagName.toUpperCase()])throw Error(\"goog.dom.safe.setInnerHtml cannot be used to set content of \"+b.tagName+\".\");b.innerHTML=K.b.l.u(c)};K.a.S.tt=function(b,c){b.outerHTML=K.b.l.u(c)};K.a.S.wt=function(b,c){b.style.cssText=K.b.F.u(c)};K.a.S.yq=function(b,c){b.write(K.b.l.u(c))};",
+        "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "LOW",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "ReUg41",
+              "url": "https://semgrep.dev/playground/r/7ZTYRP/javascript.browser.security.insecure-document-method.insecure-document-method",
+              "version_id": "7ZTYRP"
+            }
+          },
+          "shortlink": "https://sg.run/LwA9",
+          "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "browser"
+          ]
+        },
+        "metavars": {
+          "$EL": {
+            "abstract_content": "b",
+            "end": {
+              "col": 774,
+              "line": 153,
+              "offset": 75210
+            },
+            "start": {
+              "col": 773,
+              "line": 153,
+              "offset": 75209
+            }
+          },
+          "$HTML": {
+            "abstract_content": "K.b.l.u(c)",
+            "end": {
+              "col": 795,
+              "line": 153,
+              "offset": 75231
+            },
+            "start": {
+              "col": 785,
+              "line": 153,
+              "offset": 75221
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/static/loader.js",
+      "start": {
+        "col": 773,
+        "line": 153,
+        "offset": 75209
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+      "end": {
+        "col": 110,
+        "line": 12,
+        "offset": 389
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "0b3b6882d4f75e677ac7fdfac5079b8c943bea40b470bbbf4d6ba4f74cba36b04bbc4163f6968b13c6da4bd1beb1111de4784aa84d6eddd71df5735c072a7e06_0",
+        "is_ignored": false,
+        "lines": "            <li><a href = \"{{ url[0] }}\">{{ url[0] }}</a> - {{ url[1] }} - Allowed Methods: {{ url[2] }}</li>",
+        "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. If using a relative URL, start with a literal forward slash and concatenate the URL, like this: href='/{{link}}'. You may also consider setting the Content Security Policy (CSP) header.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://flask.palletsprojects.com/en/1.1.x/security/#cross-site-scripting-xss#:~:text=javascript:%20URI",
+            "https://github.com/pugjs/pug/issues/2952"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "AbUzlj",
+              "url": "https://semgrep.dev/playground/r/jQT95n/javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+              "version_id": "jQT95n"
+            }
+          },
+          "shortlink": "https://sg.run/8yOq",
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "express"
+          ]
+        },
+        "metavars": {
+          "$1": {
+            "abstract_content": "\"",
+            "end": {
+              "col": 28,
+              "line": 12,
+              "offset": 307
+            },
+            "start": {
+              "col": 27,
+              "line": 12,
+              "offset": 306
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/templates/index.html",
+      "start": {
+        "col": 17,
+        "line": 12,
+        "offset": 296
+      }
+    },
+    {
+      "check_id": "python.flask.security.dangerous-template-string.dangerous-template-string",
+      "end": {
+        "col": 89,
+        "line": 114,
+        "offset": 3391
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "2c8a7caca1db7aebff8cdf611252e74a88dc54ce856ca4cacefe853e8158f814d420c49d9b82dae9ce83b054fee388a7f78c74a75b0e915befc9c4063453344f_0",
+        "is_ignored": false,
+        "lines": "    template = '''<html>\n    <head>\n    <title>Error</title>\n    </head>\n    <body>\n    <h1>Oops that page doesn't exist!!</h1>\n    <h3>%s</h3>\n    </body>\n    </html>\n    ''' % request.url\n\n    return render_template_string(template, dir = dir, help = help, locals = locals),404",
+        "message": "Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2.html",
+            "https://pequalsnp-team.github.io/cheatsheet/flask-jinja2-ssti"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "v8UnZJ",
+              "url": "https://semgrep.dev/playground/r/X0TJvb/python.flask.security.dangerous-template-string.dangerous-template-string",
+              "version_id": "X0TJvb"
+            }
+          },
+          "shortlink": "https://sg.run/b79E",
+          "source": "https://semgrep.dev/r/python.flask.security.dangerous-template-string.dangerous-template-string",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "flask"
+          ]
+        },
+        "metavars": {
+          "$S": {
+            "abstract_content": "request.url",
+            "end": {
+              "col": 22,
+              "line": 112,
+              "offset": 3301
+            },
+            "start": {
+              "col": 11,
+              "line": 112,
+              "offset": 3290
+            }
+          },
+          "$V": {
+            "abstract_content": "template",
+            "end": {
+              "col": 13,
+              "line": 103,
+              "offset": 3124
+            },
+            "start": {
+              "col": 5,
+              "line": 103,
+              "offset": 3116
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 5,
+        "line": 103,
+        "offset": 3116
+      }
+    },
+    {
+      "check_id": "python.flask.security.dangerous-template-string.dangerous-template-string",
+      "end": {
+        "col": 100,
+        "line": 281,
+        "offset": 10412
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "8611bc1180d2451a16c4e86f07eaaeaf5e6ff39e2b41f624ba959a787f69d1d7372881fc5eaab0f01fdc74dec374145d9fd6764b8a1c3f7462441090e3cabf2a_0",
+        "is_ignored": false,
+        "lines": "                    template = '''<html>\n                        <head>\n                        <title>Error</title>\n                        </head>\n                        <body>\n                        <h1>Oops Error Occurred</h1>\n                        <h3>%s</h3>\n                        </body>\n                        </html>\n                        ''' % str(e)\n                    return render_template_string(template, dir=dir, help=help, locals=locals), 404",
+        "message": "Found a template created with string formatting. This is susceptible to server-side template injection and cross-site scripting attacks.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-96: Improper Neutralization of Directives in Statically Saved Code ('Static Code Injection')"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2.html",
+            "https://pequalsnp-team.github.io/cheatsheet/flask-jinja2-ssti"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "rule_id": "v8UnZJ",
+              "url": "https://semgrep.dev/playground/r/X0TJvb/python.flask.security.dangerous-template-string.dangerous-template-string",
+              "version_id": "X0TJvb"
+            }
+          },
+          "shortlink": "https://sg.run/b79E",
+          "source": "https://semgrep.dev/r/python.flask.security.dangerous-template-string.dangerous-template-string",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "flask"
+          ]
+        },
+        "metavars": {
+          "$S": {
+            "abstract_content": "str(e)",
+            "end": {
+              "col": 37,
+              "line": 280,
+              "offset": 10312
+            },
+            "start": {
+              "col": 31,
+              "line": 280,
+              "offset": 10306
+            }
+          },
+          "$V": {
+            "abstract_content": "template",
+            "end": {
+              "col": 29,
+              "line": 271,
+              "offset": 9971
+            },
+            "start": {
+              "col": 21,
+              "line": 271,
+              "offset": 9963
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "/Users/dromakin/GitHubDesktop/Vulnerable-Flask-App/app/app.py",
+      "start": {
+        "col": 21,
+        "line": 271,
+        "offset": 9963
+      }
+    }
+  ],
+  "version": "1.28.0"
+}
